@@ -1,13 +1,20 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgModule } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
-})
+  })
+
 export class TaskControllerService {
 
-  constructor() { }
+  private apiHost = 'http://localhost:8080';
 
-  start() {
-    console.log('Task started');
+  constructor(
+    private http: HttpClient
+  ) {}
+
+  search() {
+    return this.http.get(`${this.apiHost}/task`);
   }
 }
