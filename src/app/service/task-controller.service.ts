@@ -15,11 +15,15 @@ export class TaskControllerService {
   ) {}
 
   search(page: number = 0): Observable<any> {
-    return this.http.get(`${this.apiHost}/task?page=${page}`);
+    return this.http.get(`${this.apiHost}/task?page=${page}&size=10`);
   }
 
   searchByElement(nameOfElement: string, valueOfElement: string): Observable<any> {
     console.log(`${this.apiHost}/task/find?${nameOfElement}=${valueOfElement}`);
     return this.http.get(`${this.apiHost}/task/find?${nameOfElement}=${valueOfElement}`);
+  }
+
+  insert(inputData: any): Observable<any> {
+    return this.http.post(`${this.apiHost}/task`, inputData);
   }
 }

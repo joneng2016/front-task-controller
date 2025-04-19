@@ -51,7 +51,6 @@ export class ShowTasksComponent {
   }
 
   find(valueOfSearch:string, nameField:string) {
-    console.log(valueOfSearch, nameField);
     this.taskControllerService.searchByElement(nameField, valueOfSearch).subscribe(
       (response) => {
         this.dataSource = response.tasks;

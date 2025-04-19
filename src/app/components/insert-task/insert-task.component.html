@@ -1,0 +1,71 @@
+<div *ngIf="!isConcluded">
+    <mat-grid-list cols="1" rowHeight="100px" width="200px">
+        <mat-grid-tile>
+            <mat-form-field appearance="fill">
+                <mat-label>Task Name</mat-label>
+                <input matInput #taskName>
+            </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-form-field appearance="fill">
+                <mat-label>Responsible</mat-label>
+                <input matInput #responsible>
+            </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-form-field>
+                <mat-label>Status</mat-label>
+                <mat-select #status>
+                    <mat-option value="backlog">Backlog</mat-option>
+                    <mat-option value="dev">In Dev</mat-option>
+                    <mat-option value="qa">In Qa</mat-option>
+                    <mat-option value="wait deploy">Wait Deploy</mat-option>
+                    <mat-option value="done">Done</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-form-field>
+                <mat-label>Description</mat-label>
+                <textarea #description matInput placeholder="Description ..."></textarea>
+            </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-form-field appearance="fill">
+                <mat-label>Dev Time</mat-label>
+                <input #devTime type="number" min="0" value="0" matInput>
+            </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-form-field appearance="fill">
+                <mat-label>QA Time</mat-label>
+                <input #qaTime type="number" min="0" value="0" matInput>
+            </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-form-field appearance="fill">
+                <mat-label>Time Done</mat-label>
+                <input #doneTime type="number" min="0" value="0" matInput>
+            </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <button (click)="execInput(taskName, responsible, status, description, devTime, qaTime, doneTime)"
+                mat-flat-button>Insert this Task</button>
+        </mat-grid-tile>
+
+    </mat-grid-list>
+</div>
+<div *ngIf="isConcluded">
+    <mat-grid-list cols="1" rowHeight="100px" width="200px">
+        <mat-grid-tile>
+            <h2>Task Inserted</h2>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
