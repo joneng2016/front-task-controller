@@ -19,7 +19,6 @@ export class TaskControllerService {
   }
 
   searchByElement(nameOfElement: string, valueOfElement: string): Observable<any> {
-    console.log(`${this.apiHost}/task/find?${nameOfElement}=${valueOfElement}`);
     return this.http.get(`${this.apiHost}/task/find?${nameOfElement}=${valueOfElement}`);
   }
 
