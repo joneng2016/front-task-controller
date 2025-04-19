@@ -14,7 +14,12 @@ export class TaskControllerService {
     private http: HttpClient
   ) {}
 
-  search() {
-    return this.http.get(`${this.apiHost}/task`);
+  search(page: number = 0): Observable<any> {
+    return this.http.get(`${this.apiHost}/task?page=${page}`);
+  }
+
+  searchByElement(nameOfElement: string, valueOfElement: string): Observable<any> {
+    console.log(`${this.apiHost}/task/find?${nameOfElement}=${valueOfElement}`);
+    return this.http.get(`${this.apiHost}/task/find?${nameOfElement}=${valueOfElement}`);
   }
 }

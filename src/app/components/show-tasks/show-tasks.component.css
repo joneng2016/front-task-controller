@@ -4,33 +4,40 @@ table {
 
 section {
     display: table;
-  }
-  
-  .example-label {
+}
+
+.nextstep-label {
     display: table-cell;
     font-size: 14px;
     margin-left: 8px;
     min-width: 120px;
-  }
-  
-  .example-button-row {
-    display: table-cell;
-    max-width: 600px;
-  }
-  
-  .example-button-row .mat-mdc-button-base {
-    margin: 8px 8px 8px 0;
-  }
-  
-  .example-flex-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  
-  .example-button-container {
+}
+
+.nextstep-button-row {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+.nextstep-center {
     display: flex;
     justify-content: center;
-    width: 140px;
-  }
-  
+}
+
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.table-main-menu {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+}
+
+.input-form {
+    margin-right: 15px;
+}
